@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Category
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/category.css' %}">
+{% endblock %}
+
+{% block body_class %}
+category
+{% endblock %}
+
+{% block content %}
+<div class="cardiv">
+    {% for p in prod %}
+    <div class="card" style="width: 18rem;">
+        <img src="/media/{{ p.img1 }}" class="card-img-top" alt="card image">
+        <div class="card-body">
+            <h5 class="card-title">{{ p.name }}</h5>
+            <p class="card-text">{{ p.description }}</p>
+            <a href="/view_product/{{ p.id }}" class="btn btn-primary">
+                Product details
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block body_class %}home{% endblock %}
+
+{% block content %}
+<h2>Categories</h2>
+{% for c in cat %}
+<a href="/view_category/{{c.id}}">{{c.name}}</a>
+{% endfor %}
+<br><br>
+<div class="cardiv">
+    {% for p in prod %}
+    <br><br>
+
+    <div class="card" style="width: 18rem; ">
+        <img src="/media/{{p.img1}}" class="card-img-top" alt="card image">
+        <div class="card-body">
+            <h5 class="card-title">{{p.name}}</h5>
+            <p class="card-text">{{p.description}}</p>
+            <a href="/view_product/{{p.id}}" class="btn btn-primary">Product details</a> <br>
+            <a href="/editproduct/{{p.id}}" class="btn btn-primary"> edit Product </a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add product
+{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/add_product.css' %}">
+{% endblock %}
+{% block body_class %}add_product{% endblock %}
+
+{% block content %}
+
+<form action="" class="fm" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{fm}}
+    <input type="submit" value="Submit" class="">
+
+
+
+</form>
+
+{% endblock %}
