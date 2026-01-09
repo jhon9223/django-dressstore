@@ -4,8 +4,10 @@ from .models import category, product
 
 class ProductForm(forms.ModelForm):
     class Meta:
+
         model = product
-        fields = '__all__'
+        exclude = ['us']
+        # fields = '__all__'
         # fields = ['name', 'description', 'price', 'img1', 'cat']
 
 

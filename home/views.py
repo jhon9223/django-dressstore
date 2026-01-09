@@ -42,7 +42,7 @@ def register_fn(request):
                     last_name=lname
                 )
 
-                return redirect('/login')
+                return redirect('/')
         else:
             return render(request, 'register.html', {'msg': 'password not matching'})
     return render(request, 'register.html')
@@ -70,7 +70,9 @@ def add_product(request):
     if request.method == "POST":
         f = ProductForm(request.POST, request.FILES)
         if f.is_valid():
-            f.save()
+            x = f.save(commit=False)
+            x.us = request.user
+            x.save()
             return redirect('/home')
     else:
         f = ProductForm()
@@ -88,3 +90,9 @@ def edit_product(request, pid):
         x = product.objects.get(id=pid)
         f = editproductform(instance=x)
         return render(request, 'edit_product.html', {'fm': f})
+
+
+def delete_product(request, pid):
+    x = product.objects.get(id=pid)
+    x.delete()
+    return redirect('/home')

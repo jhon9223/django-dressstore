@@ -29,4 +29,5 @@ urlpatterns = [
     path('logout/', logout_fn, name='logout'),
     path('add_product/', add_product, name='add_product'),
     path("editproduct/<int:pid>", edit_product, name="editproduct"),
+    path("deleteproduct/<int:pid>", delete_product, name="deleteproduct"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

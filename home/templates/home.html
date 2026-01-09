@@ -24,7 +24,8 @@ Home
             <h5 class="card-title">{{p.name}}</h5>
             <p class="card-text">{{p.description}}</p>
             <a href="/view_product/{{p.id}}" class="btn btn-primary">Product details</a> <br>
-            <a href="/editproduct/{{p.id}}" class="btn btn-primary"> edit Product </a>
+            <a href="/editproduct/{{p.id}}" class="btn btn-info"> edit Product </a>
+            <a href="/deleteproduct/{{p.id}}" class="btn btn-danger"> Delete Product </a>
         </div>
     </div>
     {% endfor %}
