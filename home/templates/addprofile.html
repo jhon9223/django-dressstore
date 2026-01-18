@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add product
+{% endblock %}
+{% block extra_css %}
+
+{% endblock %}
+{% block body_class %}add_product{% endblock %}
+
+{% block content %}
+<h2>Welcome to Dressstore</h2>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ fm }}
+    <button type="submit">Add Profile</button>
+
+
+
+</form>
+
+{% endblock %}

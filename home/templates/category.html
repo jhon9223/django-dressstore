@@ -6,7 +6,11 @@ Category
 {% endblock %}
 
 {% block extra_css %}
+{% if theme == 'light' %}
 <link rel="stylesheet" href="{% static 'css/category.css' %}">
+{% else %}
+<link rel="stylesheet" href="{% static 'css/home2.css' %}">
+{% endif %}
 {% endblock %}
 
 {% block body_class %}

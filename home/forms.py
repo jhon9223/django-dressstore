@@ -1,5 +1,5 @@
 from django import forms
-from .models import category, product
+from .models import category, product, profile
 
 
 class ProductForm(forms.ModelForm):
@@ -20,4 +20,11 @@ class categoryform(forms.ModelForm):
 class editproductform(forms.ModelForm):
     class Meta:
         model = product
-        fields = '__all__'
+        # fields = '__all__'
+        exclude = ['us']
+
+
+class profileform(forms.ModelForm):
+    class Meta:
+        model = profile
+        exclude = ['us']

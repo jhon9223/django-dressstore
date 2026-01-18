@@ -1,0 +1,24 @@
+* {
+    color: white;
+}
+
+.body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(31, 8, 8);
+
+}
+
+.cardiv {
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(34, 6, 6);
+}
+
+.card {
+    background-color: rgb(51, 10, 10);
+}

@@ -1,23 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-Home
+Add product
 {% endblock %}
 {% block extra_css %}
-{% if theme == 'light' %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-{% else %}
-<link rel="stylesheet" href="{% static 'css/home2.css' %}">
-{% endif %}
-{% endblock %}
-{% block body_class %}home{% endblock %}
 
+{% endblock %}
+{% block body_class %}add_product{% endblock %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% block content %}
-<h2>Categories</h2>
-{% for c in cat %}
-<a href="/view_category/{{c.id}}">{{c.name}}</a>
-{% endfor %}
-<br><br>
+<h2>User Profile</h2>
+<hr>
+<h2>{{user.username}}</h2>
+<h2>{{user.profile.phone}}</h2>
+<h2>{{user.profile.address}}</h2>
+<img src="{{ user.profile.img.url }}" alt="Profile Image" style="width:200px;height:200px;">
+<h3>Your Products:</h3>
 <div class="cardiv">
     {% for p in prod %}
     <br><br>
@@ -34,5 +32,5 @@ Home
     </div>
     {% endfor %}
 
-</div>
-{% endblock %}
+
+    {% endblock %}

@@ -21,3 +21,13 @@ class product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class profile(models.Model):
+    img = models.ImageField(upload_to='profile')
+    phone = models.CharField(max_length=15)
+    address = models.TextField()
+    us = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.us)

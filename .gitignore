@@ -1,6 +1,12 @@
-env/
-venv/
+# Media / uploads
+uploads/
+media/
+
+# Django
+db.sqlite3
 __pycache__/
 *.pyc
-db.sqlite3
-media/
+
+# Virtual env
+env/
+venv/

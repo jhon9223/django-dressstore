@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+
+<body>
+    <!-- <h2 id="a">Loading joke...</h2>
+   <h2 id="b"></h2> -->
+    <img src="" id="c" alt="Dog image" width="300">
+    <button onclick="myfn()">Fetch Dog Image</button>
+
+    <script>
+
+        /*
+        fetch('https://official-joke-api.appspot.com/random_joke')
+            .then(res => res.json())
+            .then(x => {
+                console.log(x.setup);
+                console.log(x.punchline);
+
+                document.getElementById('a').innerHTML = x.setup;
+                document.getElementById('b').innerHTML = x.punchline;
+            })
+            .catch(err => console.error(err));
+        */
+
+        function myfn() {
+            fetch('https://dog.ceo/api/breeds/image/random')
+                .then(res => res.json())
+                .then(x => {
+                    console.log(x);
+                    document.getElementById('c').src = x.message;
+                })
+                .catch(err => console.error(err));
+        }
+    </script>
+
+</body>
+
+</html>
